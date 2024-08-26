@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://so4endisgo52"]
+
+[ext_resource type="PackedScene" uid="uid://bpoq6kr8qkrn2" path="res://components/ball.tscn" id="1_21thj"]
+[ext_resource type="Script" path="res://components/player_ball.gd" id="1_ijju7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ubdur"]
+bounce = 0.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mxfyo"]
+albedo_color = Color(0.51946, 0, 0.0293206, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_5dodr"]
+radius = 0.407892
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2gvgt"]
+radius = 0.327495
+
+[node name="PlayerBall" type="RigidBody3D"]
+axis_lock_linear_x = true
+axis_lock_linear_z = true
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+physics_material_override = SubResource("PhysicsMaterial_ubdur")
+script = ExtResource("1_ijju7")
+
+[node name="Ball" parent="." instance=ExtResource("1_21thj")]
+surface_material_override/0 = SubResource("StandardMaterial3D_mxfyo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_5dodr")
+
+[node name="SpringArm3D" type="SpringArm3D" parent="."]
+spring_length = 4.0
+
+[node name="Camera3D" type="Camera3D" parent="SpringArm3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4)
+
+[node name="ImpactArea" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.175995, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ImpactArea"]
+shape = SubResource("SphereShape3D_2gvgt")
+
+[node name="ImpactPoint" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.313764, 0)
+
+[connection signal="area_entered" from="ImpactArea" to="." method="_on_impact_area_area_entered"]

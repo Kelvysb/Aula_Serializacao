@@ -1,0 +1,76 @@
+{
+	"SegmentBlocks" : [
+		{
+			"Segments" : [
+				{
+					"Type" : 1,
+					"Rotation" : 0
+				},
+				{
+					"Type" : 2,
+					"Rotation" : 1
+				},
+				{
+					"Type" : 3,
+					"Rotation" : 2
+				},
+				{
+					"Type" : 1,
+					"Rotation" : 4
+				},
+				{
+					"Type" : 1,
+					"Rotation" : 5
+				},
+				{
+					"Type" : 1,
+					"Rotation" : 6
+				},
+				{
+					"Type" : 1,
+					"Rotation" : 7
+				},
+				{
+					"Type" : 1,
+					"Rotation" : 0
+				}
+			]
+		},
+		{
+			"Segments" : [
+				{
+					"Type" : 1,
+					"Rotation" : 0
+				},
+				{
+					"Type" : 2,
+					"Rotation" : 1
+				},
+				{
+					"Type" : 3,
+					"Rotation" : 2
+				},
+				{
+					"Type" : 1,
+					"Rotation" : 4
+				},
+				{
+					"Type" : 1,
+					"Rotation" : 5
+				},
+				{
+					"Type" : 1,
+					"Rotation" : 6
+				},
+				{
+					"Type" : 1,
+					"Rotation" : 7
+				},
+				{
+					"Type" : 0,
+					"Rotation" : 0
+				}
+			]
+		}		
+	]
+}
